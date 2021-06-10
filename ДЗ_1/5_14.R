@@ -5,7 +5,7 @@ X <- matrix(c(47.8,46.4,46.3,45.1,47.6,52.5,51.2,49.8,48.1,45,51.2,48.5,52.1,48.
 
 #x mean matrix
 xmean <- colMeans(X)
-print(xbar)
+print(xmean)
 
 #S matrix
 S <- cov(X)
@@ -18,3 +18,8 @@ print(S_inverted)
 #Final result
 T2 <- n * (xmean - u) %*% S_inverted %*% (xmean - u)
 print(T2)
+
+pvalue <- pchisq(q = T2, df = p, lower.tail = FALSE)
+print(pvalue)
+
+#p_value = 0.7738294, so we accept H0

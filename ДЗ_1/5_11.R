@@ -18,3 +18,8 @@ print(S_inverted)
 #Final result
 T2 <- n * (xmean - u) %*% S_inverted %*% (xmean - u)
 print(T2)
+
+p_value <- pchisq(q = T2, df = p, lower.tail = FALSE)
+print(p_value)
+
+#p_value = 0.9699445 so we accept H0
